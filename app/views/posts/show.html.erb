@@ -1,14 +1,18 @@
+<%= tinymce_assets %>
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
-  <%= @post.title %>
+  <%#= @post.title %>
+    <%= best_in_place @post, :title %> 
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @post.description %>
+  <%#= @post.description %> 
+  <%= best_in_place @post,:class =>:tinymce %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+<%= tinymce %>
